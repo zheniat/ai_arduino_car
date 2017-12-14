@@ -62,7 +62,7 @@ void counter_right()  // counts from the speed sensor
 
 void setup() 
 {
-  Serial.begin(9600);
+  Serial.begin(38400);
   
   pinMode(encoder_pin_left, INPUT);
   pinMode(encoder_pin_right, INPUT);
@@ -108,6 +108,12 @@ void setup()
 void loop()
 {
   get_sensor_data();
+  
+  if(Serial.available()){ // Checks whether data is comming from the serial port
+      char state = (char)Serial.read(); // Reads the data from the serial port
+      Serial.println("BT state: ");
+      Serial.print(state);
+  } 
 }
 
 
