@@ -256,9 +256,9 @@ String get_sensor_data(){
     long dist_bl = get_distance(back_left_trig, back_left_echo);
     long dist_br = get_distance(back_right_trig, back_right_echo);
     
-    result += dist_fr;
-    result += ',';
     result += dist_fl;
+    result += ',';
+    result += dist_fr;
     result += ',';
     result += dist_br;
     result += ',';
